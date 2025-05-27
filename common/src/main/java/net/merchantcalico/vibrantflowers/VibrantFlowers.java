@@ -6,8 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class VibrantFlowers {
-	public static final String MOD_ID = "examplemod";
-	public static final String MOD_NAME = "Example Mod";
+	public static final String MOD_ID = "vibrantflowers";
+	public static final String MOD_NAME = "Vivian's Vibrant Flowers";
 	public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
 	// These strings are for the PlatformHelper API.
 	// Don't forget to update the service config in
