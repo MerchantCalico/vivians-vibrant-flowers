@@ -20,13 +20,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"house.greenhouse.examplemod.ExampleModFabric"
+			"net.merchantcalico.vibrantflowers.VibrantFlowersFabric"
 		],
 		"client": [
-			"house.greenhouse.examplemod.client.ExampleModClientFabric"
+			"net.merchantcalico.vibrantflowers.client.VibrantFlowersClientFabric"
 		],
 		"server": [
-			"house.greenhouse.examplemod.server.dedicated.ExampleModDedicatedFabric"
+			"net.merchantcalico.vibrantflowers.server.dedicated.VibrantFlowersDedicatedFabric"
 		]
 	},
 	"mixins": [

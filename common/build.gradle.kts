@@ -1,6 +1,5 @@
-import house.greenhouse.examplemod.gradle.Properties
-import house.greenhouse.examplemod.gradle.Versions
-import me.modmuss50.mpp.PublishModTask
+import net.merchantcalico.vibrantflowers.gradle.Properties
+import net.merchantcalico.vibrantflowers.gradle.Versions
 
 plugins {
 	id("conventions.common")
