@@ -1,5 +1,7 @@
 package net.merchantcalico.vibrantflowers;
 
+import net.merchantcalico.vibrantflowers.common.registries.ModBlocks;
+import net.merchantcalico.vibrantflowers.common.registries.ModItems;
 import net.merchantcalico.vibrantflowers.platform.VibrantFlowersPlatformHelper;
 import net.merchantcalico.vibrantflowers.platform.side.VibrantFlowersSideHelper;
 import org.slf4j.Logger;
@@ -19,6 +21,8 @@ public class VibrantFlowers {
 	private static VibrantFlowersSideHelper<?> sideHelper;
 
 	public static void init() {
+		ModItems.init();
+		ModBlocks.init();
 	}
 
 	public static Logger getLogger(String... subsystems) {
