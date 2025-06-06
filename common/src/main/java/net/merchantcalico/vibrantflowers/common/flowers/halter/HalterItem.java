@@ -4,6 +4,7 @@ import net.merchantcalico.vibrantflowers.VibrantFlowers;
 import net.merchantcalico.vibrantflowers.common.registries.ModBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class HalterItem extends BlockItem {
 	public HalterItem(Properties properties) {
@@ -26,20 +28,11 @@ public class HalterItem extends BlockItem {
 		Entity entity = Minecraft.getInstance().crosshairPickEntity;
 		if(entity instanceof Animal animal && animal.isBaby()){
 			animal.setAge(-Integer.MAX_VALUE);
+			level.addParticle(ParticleTypes.ASH,
+					animal.getX(), animal.getY(), animal.getZ()
+					,0,1,0);
 			return InteractionResult.SUCCESS;
 		}
 		return super.use(level, player, hand);
-	}
-
-	@Override
-	public InteractionResult useOn(UseOnContext context) {
-		BlockPos blockPos = context.getClickedPos();
-		Level level = context.getLevel();
-		BlockState state = level.getBlockState(blockPos);
-		Block block = state.getBlock();
-		if(block instanceof BonemealableBlock){
-			//TODO: Implement That, somehow
-		}
-		return super.useOn(context);
 	}
 }

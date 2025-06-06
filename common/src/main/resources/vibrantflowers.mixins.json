@@ -4,7 +4,7 @@
   "package": "net.merchantcalico.vibrantflowers.mixin",
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": ["CropBlockMixin"],
 	"client": [],
   "server": [],
   "injectors": {
