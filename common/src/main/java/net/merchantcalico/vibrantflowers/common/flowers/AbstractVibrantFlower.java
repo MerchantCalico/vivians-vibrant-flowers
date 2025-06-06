@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -24,13 +25,12 @@ public class AbstractVibrantFlower extends FlowerBlock {
 		this.melody = melody;
 	}
 
-	@Override
-	protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+	public void sing(Level level, BlockPos pos, BlockState state, RandomSource random) {
 		level.playLocalSound(pos, melody, SoundSource.BLOCKS, 10,1,true);
-		level.sendParticles(ParticleTypes.ENCHANT,
+		level.addParticle(ParticleTypes.ENCHANT,
 				pos.getX()+random.nextDouble(),
 				pos.getY()+random.nextDouble(),
 				pos.getZ()+random.nextDouble(),
-				3,0.0,0.2,0.0,0.1);
+				0.2,0.0,0.1);
 	}
 }

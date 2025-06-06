@@ -5,6 +5,7 @@ import net.merchantcalico.vibrantflowers.common.registries.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
@@ -22,7 +23,9 @@ public class LuteItem extends Item {
 		Level level = context.getLevel();
 		BlockState targetBlock = level.getBlockState(pos);
 		if(targetBlock.getBlock() instanceof AbstractVibrantFlower avf){
-			level.scheduleTick(pos, targetBlock.getBlock(),20);
+			avf.sing(level, pos, targetBlock, level.getRandom());
+			context.getPlayer().awardStat(Stats.ITEM_USED.get(this));
+
 			return InteractionResult.SUCCESS;
 		}
 

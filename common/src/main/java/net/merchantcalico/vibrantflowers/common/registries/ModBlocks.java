@@ -18,27 +18,21 @@ import java.util.function.Function;
 
 public class ModBlocks {
 
-	public static final HalterBlock HALTER = registerBlockNoItem("halter",
-			HalterBlock::new, Properties.ofFullCopy(Blocks.POPPY));
+	public static final HalterBlock HALTER = registerBlock("halter",
+			HalterBlock::new, Properties.ofFullCopy(Blocks.POPPY), false);
 	public static final HalterItem HALTER_ITEM = ModItems.registerItem("halter",
 			HalterItem::new, new Item.Properties());
 
 	public static<T extends Block> T registerBlock(String name,
-		  Function<Properties, T> factory, Properties properties){
+		  Function<Properties, T> factory, Properties properties, boolean addItem){
 		ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK,
 			ResourceLocation.fromNamespaceAndPath(VibrantFlowers.MOD_ID, name));
 		T block = factory.apply(properties.setId(key));
-		ModItems.registerItem(name, (p)->new BlockItem(block, p), new Item.Properties());
+		if(addItem)
+			ModItems.registerItem(name, (p)->new BlockItem(block, p), new Item.Properties());
 		return Registry.register(BuiltInRegistries.BLOCK, key, block);
 	}
 
-	public static<T extends Block> T registerBlockNoItem(String name,
-		Function<Properties, T> factory, Properties properties){
-		ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK,
-				ResourceLocation.fromNamespaceAndPath(VibrantFlowers.MOD_ID, name));
-		T block = factory.apply(properties.setId(key));
-		return Registry.register(BuiltInRegistries.BLOCK, key, block);
-	}
 
 
 	public static void init(){}
