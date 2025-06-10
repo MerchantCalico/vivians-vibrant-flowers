@@ -1,3 +1,6 @@
 {
-	"sounds.vibrantflowers.halter.melody": "Halter Sings"
+	"item.vibrantflowers.lute": "Vibrant's Lute",
+	"item.vibrantflowers.halter": "Halter",
+	"sounds.vibrantflowers.halter.melody": "Halter Sings",
+	"tab.vibrantflowers": "Vibrant's Flowers"
 }

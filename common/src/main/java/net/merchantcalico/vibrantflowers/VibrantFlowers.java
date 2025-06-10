@@ -1,6 +1,7 @@
 package net.merchantcalico.vibrantflowers;
 
 import net.merchantcalico.vibrantflowers.common.registries.ModBlocks;
+import net.merchantcalico.vibrantflowers.common.registries.ModCreativeTabs;
 import net.merchantcalico.vibrantflowers.common.registries.ModItems;
 import net.merchantcalico.vibrantflowers.common.registries.ModSoundEvents;
 import net.merchantcalico.vibrantflowers.platform.VibrantFlowersPlatformHelper;
@@ -25,6 +26,7 @@ public class VibrantFlowers {
 		ModItems.init();
 		ModBlocks.init();
 		ModSoundEvents.init();
+		ModCreativeTabs.init();
 	}
 
 	public static Logger getLogger(String... subsystems) {
