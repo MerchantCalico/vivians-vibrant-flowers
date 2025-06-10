@@ -1,6 +1,11 @@
 {
+	"tab.vibrantflowers": "Vivian's Flowers",
 	"item.vibrantflowers.lute": "Vibrant's Lute",
+
 	"item.vibrantflowers.halter": "Halter",
+	"item.vibrantflowers.chrysanth": "Chrysanthemum",
+
 	"sounds.vibrantflowers.halter.melody": "Halter Sings",
-	"tab.vibrantflowers": "Vibrant's Flowers"
+	"sounds.vibrantflowers.chrysanth.melody": "Chrysanthemum Sings"
+
 }

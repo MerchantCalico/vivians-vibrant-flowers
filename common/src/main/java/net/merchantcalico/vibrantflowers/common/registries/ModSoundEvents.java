@@ -9,6 +9,7 @@ import net.minecraft.sounds.SoundEvent;
 public class ModSoundEvents {
 
 	public static final SoundEvent HALTER_MELODY = register("halter_melody");
+	public static final SoundEvent CHRYSANTH_MELODY = register("chrysanth_melody");
 
 	public static SoundEvent register(String name){
 		ResourceLocation location = ResourceLocation.fromNamespaceAndPath(VibrantFlowers.MOD_ID, name);

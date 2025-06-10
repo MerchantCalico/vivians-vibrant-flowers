@@ -3,5 +3,11 @@
 	{
 		"subtitle": "sounds.vibrantflowers.halter.melody",
 		"sounds": ["vibrantflowers:halter_melody"]
+	},
+	"chrysanth_melody":
+	{
+		"subtitle": "sounds.vibrantflowers.chrysanth.melody",
+		"sounds": ["vibrantflowers:chrysanth_melody"]
 	}
+
 }

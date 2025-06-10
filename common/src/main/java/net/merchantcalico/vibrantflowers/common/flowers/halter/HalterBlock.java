@@ -9,6 +9,6 @@ import net.minecraft.world.effect.MobEffects;
 
 public class HalterBlock extends AbstractVibrantFlower {
 	public HalterBlock(Properties properties) {
-		super(MobEffects.SLOWNESS, 10, properties, ModSoundEvents.HALTER_MELODY);
+		super(MobEffects.SLOWNESS, 10, properties, ModSoundEvents.HALTER_MELODY,1,1);
 	}
 }

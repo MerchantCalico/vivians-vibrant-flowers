@@ -19,14 +19,19 @@ import net.minecraft.world.level.block.state.BlockState;
 public class AbstractVibrantFlower extends FlowerBlock {
 
 	SoundEvent melody;
+	int volume;
+	int pitch;
 	public SoundEvent getMelody() {return melody;}
-	public AbstractVibrantFlower(Holder<MobEffect> effect, float seconds, Properties properties, SoundEvent melody) {
+	public AbstractVibrantFlower(Holder<MobEffect> effect, float seconds, Properties properties, SoundEvent melody,
+								 int volume, int pitch) {
 		super(effect, seconds, properties);
 		this.melody = melody;
+		this.volume = volume;
+		this.pitch = pitch;
 	}
 
 	public void sing(Level level, BlockPos pos, BlockState state, RandomSource random) {
-		level.playLocalSound(pos, melody, SoundSource.BLOCKS, 10,1,true);
+		level.playLocalSound(pos, melody, SoundSource.BLOCKS, volume, pitch,false);
 		level.addParticle(ParticleTypes.ENCHANT,
 				pos.getX()+random.nextDouble(),
 				pos.getY()+random.nextDouble(),

@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 
 public class ModCreativeTabs {
@@ -24,6 +25,9 @@ public class ModCreativeTabs {
 						.displayItems((itemDisplayParameters, output) ->{
 							output.accept(ModItems.LUTE);
 							output.accept(ModBlocks.HALTER_ITEM);
+							for (int i = 0; i < 16; i++) {
+								output.accept(ModBlocks.CHRYSANTHS[i]);
+							}
 						})
 						.build());
 	}

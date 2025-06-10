@@ -1,6 +1,7 @@
 package net.merchantcalico.vibrantflowers.common.registries;
 
 import net.merchantcalico.vibrantflowers.VibrantFlowers;
+import net.merchantcalico.vibrantflowers.common.flowers.chrysanth.ChrysanthBlock;
 import net.merchantcalico.vibrantflowers.common.flowers.halter.HalterBlock;
 import net.merchantcalico.vibrantflowers.common.flowers.halter.HalterItem;
 import net.minecraft.core.Registry;
@@ -9,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -23,6 +25,14 @@ public class ModBlocks {
 	public static final HalterItem HALTER_ITEM = ModItems.registerItem("halter",
 			HalterItem::new, new Item.Properties());
 
+	public static final ChrysanthBlock[] CHRYSANTHS = new ChrysanthBlock[16];
+
+	private static ChrysanthBlock registerChrysanth(DyeColor color){
+		return registerBlock(color.getName()+"_chrysanth",
+				properties -> {return new ChrysanthBlock(properties, color);},
+				Properties.ofFullCopy(Blocks.POPPY), true);
+	}
+
 	public static<T extends Block> T registerBlock(String name,
 		  Function<Properties, T> factory, Properties properties, boolean addItem){
 		ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK,
@@ -35,5 +45,9 @@ public class ModBlocks {
 
 
 
-	public static void init(){}
+	public static void init(){
+		for(DyeColor color: DyeColor.values()){
+			CHRYSANTHS[color.getId()] = registerChrysanth(color);
+		}
+	}
 }
