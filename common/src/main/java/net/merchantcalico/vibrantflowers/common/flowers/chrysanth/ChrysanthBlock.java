@@ -7,9 +7,11 @@ import net.merchantcalico.vibrantflowers.common.registries.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.ParticleUtils;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffect;
@@ -43,15 +45,13 @@ public class ChrysanthBlock extends AbstractVibrantFlower {
 				continue;
 			BlockPos middlePos = new BlockPos(pos.offset(direction.getUnitVec3i()));
 			BlockPos testingPos = new BlockPos(middlePos.offset(direction.getUnitVec3i()));
-			VibrantFlowers.LOG.error(middlePos+", "+testingPos);
 			if(!(level.getBlockState(testingPos).getBlock() instanceof ChrysanthBlock block))
 				continue;
-			VibrantFlowers.LOG.error("is chrysanth");
 			if(!level.getBlockState(middlePos).is(BlockTags.REPLACEABLE))
 				continue;
-			VibrantFlowers.LOG.error("can be replaced");
 			DyeColor newColor = DyeColor.getMixedColor((ServerLevel) level, this.color, block.color);
 			level.setBlockAndUpdate(middlePos,ModBlocks.CHRYSANTHS[newColor.getId()].defaultBlockState());
+			ParticleUtils.spawnParticleInBlock(level, pos, 12, ParticleTypes.HAPPY_VILLAGER);
 			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;

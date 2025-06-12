@@ -32,10 +32,6 @@ public class AbstractVibrantFlower extends FlowerBlock {
 
 	public void sing(Level level, BlockPos pos, BlockState state, RandomSource random) {
 		level.playLocalSound(pos, melody, SoundSource.BLOCKS, volume, pitch,false);
-		level.addParticle(ParticleTypes.ENCHANT,
-				pos.getX()+random.nextDouble(),
-				pos.getY()+random.nextDouble(),
-				pos.getZ()+random.nextDouble(),
-				0.2,0.0,0.1);
+
 	}
 }

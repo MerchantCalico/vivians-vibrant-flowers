@@ -5,6 +5,10 @@ import net.merchantcalico.vibrantflowers.common.registries.ModBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.ParticleUtils;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.AgeableMob;
@@ -32,13 +36,22 @@ public class HalterItem extends BlockItem {
 		ItemStack stack = player.getItemInHand(hand);
 		if(entity instanceof AgeableMob ageableMob){
 			ageableMob.setAge(-Integer.MAX_VALUE);
-			level.addParticle(ParticleTypes.ASH,
-					ageableMob.getX(), ageableMob.getY(), ageableMob.getZ()
-					,0,1,0);
+			RandomSource random = level.getRandom();
+			for(int i = 0; i < 10; ++i) {
+				double d = random.nextGaussian() * 0.02;
+				double e = random.nextGaussian() * 0.02;
+				double f = random.nextGaussian() * 0.02;
+				level.addParticle(ParticleTypes.ASH,
+						ageableMob.getRandomX(1.0F),
+						ageableMob.getRandomY() + 1.0d,
+						ageableMob.getRandomZ(1.0F), d, e, f);
+			}
+			ageableMob.makeSound(SoundEvents.ZOMBIE_VILLAGER_CURE);
 			stack.consume(1,player);
 
 			return InteractionResult.SUCCESS;
 		}
 		return super.use(level, player, hand);
 	}
+
 }
