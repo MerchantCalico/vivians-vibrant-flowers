@@ -4,7 +4,6 @@ import net.merchantcalico.vibrantflowers.registry.VibrantFlowersSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffects;
@@ -50,8 +49,7 @@ public class ChrysanthemumBlock extends AbstractVibrantFlower implements Bonemea
 			BlockPos middlePos = new BlockPos(pos.offset(direction.getUnitVec3i()));
 			BlockPos testingPos = new BlockPos(middlePos.offset(direction.getUnitVec3i()));
 
-			if (level.getBlockState(testingPos).getBlock() instanceof ChrysanthemumBlock block &&
-					level.getBlockState(middlePos).is(BlockTags.REPLACEABLE)) {
+			if (level.getBlockState(testingPos).getBlock() instanceof ChrysanthemumBlock block && level.isEmptyBlock(middlePos)) {
 				// TODO: If we have time, custom color logic.
 				newColor = DyeColor.getMixedColor(level, firstColor, block.firstColor);
 			}
@@ -66,7 +64,7 @@ public class ChrysanthemumBlock extends AbstractVibrantFlower implements Bonemea
 							0,
 							Mth.randomBetweenInclusive(random, -1, 1)
 					);
-			if (level.getBlockState(spreadPos).is(BlockTags.REPLACEABLE) && state.canSurvive(level, spreadPos)) {
+			if (level.isEmptyBlock(spreadPos) && state.canSurvive(level, spreadPos)) {
 				level.setBlockAndUpdate(spreadPos, block.defaultBlockState());
 				level.levelEvent(1505, spreadPos, 15);
 			}
