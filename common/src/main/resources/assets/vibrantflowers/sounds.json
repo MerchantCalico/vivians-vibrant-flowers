@@ -1,16 +1,16 @@
 {
-	"halter_melody":
+	"block.halter.melody":
 	{
-		"subtitle": "sounds.vibrantflowers.halter.melody",
+		"subtitle": "subtitles.block.vibrantflowers.halter.melody",
 		"sounds": [
-			"vibrantflowers:halter_melody"
+			"vibrantflowers:melody/halter"
 		]
 	},
-	"chrysanth_melody":
+	"block.chrysanthemum.melody":
 	{
-		"subtitle": "sounds.vibrantflowers.chrysanth.melody",
+		"subtitle": "subtitles.block.vibrantflowers.chrysanthemum.melody",
 		"sounds": [
-			"vibrantflowers:chrysanth_melody"
+			"vibrantflowers:melody/chrysanthemum"
 		]
 	}
 }

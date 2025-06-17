@@ -20,7 +20,7 @@ public class VibrantFlowersConfiguredFeatures {
 		context.register(WHITE_CHRYSANTH, new ConfiguredFeature<>(Feature.FLOWER,
 				new RandomPatchConfiguration(8, 4, 1, PlacementUtils.onlyWhenEmpty(
 						Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(VibrantFlowersBlocks.WHITE_CHRYSANTH))
+						new SimpleBlockConfiguration(BlockStateProvider.simple(VibrantFlowersBlocks.WHITE_CHRYSANTHEMUM))
 				))
 		));
 	}

@@ -19,9 +19,9 @@ public class VibrantFlowersCreativeTabs {
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, VIBRANT_FLOWERS,
 				CreativeModeTab.builder(CreativeModeTab.Row.TOP,0)
 						.title(Component.translatable("tab.vibrantflowers"))
-						.icon(()-> new ItemStack(VibrantFlowersItems.LUTE))
+						.icon(()-> new ItemStack(VibrantFlowersItems.VIVIANS_LUTE))
 						.displayItems((itemDisplayParameters, output) ->{
-							output.accept(VibrantFlowersItems.LUTE);
+							output.accept(VibrantFlowersItems.VIVIANS_LUTE);
 							output.accept(VibrantFlowersItems.WHITE_CHRYSANTH);
 							output.accept(VibrantFlowersItems.BLACK_CHRYSANTH);
 							output.accept(VibrantFlowersItems.RED_CHRYSANTH);

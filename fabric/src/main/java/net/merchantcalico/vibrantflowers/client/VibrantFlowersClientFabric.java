@@ -9,15 +9,15 @@ public class VibrantFlowersClientFabric implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		VibrantFlowersClient.init();
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.RED_CHRYSANTH, RenderType.cutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.ORANGE_CHRYSANTH, RenderType.cutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.YELLOW_CHRYSANTH, RenderType.cutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.GREEN_CHRYSANTH, RenderType.cutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.BLUE_CHRYSANTH, RenderType.cutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.PURPLE_CHRYSANTH, RenderType.cutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.PINK_CHRYSANTH, RenderType.cutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.WHITE_CHRYSANTH, RenderType.cutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.BLACK_CHRYSANTH, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.RED_CHRYSANTHEMUM, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.ORANGE_CHRYSANTHEMUM, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.YELLOW_CHRYSANTHEMUM, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.GREEN_CHRYSANTHEMUM, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.BLUE_CHRYSANTHEMUM, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.PURPLE_CHRYSANTHEMUM, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.PINK_CHRYSANTHEMUM, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.WHITE_CHRYSANTHEMUM, RenderType.cutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.BLACK_CHRYSANTHEMUM, RenderType.cutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(VibrantFlowersBlocks.HALTER, RenderType.cutout());
 	}
 }

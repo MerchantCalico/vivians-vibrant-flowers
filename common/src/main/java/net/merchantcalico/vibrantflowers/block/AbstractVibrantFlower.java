@@ -11,13 +11,15 @@ import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AbstractVibrantFlower extends FlowerBlock {
+	private final SoundEvent melody;
+	private final float volume;
+	private final float pitch;
 
-	SoundEvent melody;
-	int volume;
-	int pitch;
-	public SoundEvent getMelody() {return melody;}
-	public AbstractVibrantFlower(Holder<MobEffect> effect, float seconds, Properties properties, SoundEvent melody,
-								 int volume, int pitch) {
+	public AbstractVibrantFlower(Holder<MobEffect> effect,
+								 float seconds,
+								 Properties properties,
+								 SoundEvent melody,
+								 float volume, float pitch) {
 		super(effect, seconds, properties);
 		this.melody = melody;
 		this.volume = volume;
@@ -26,6 +28,9 @@ public class AbstractVibrantFlower extends FlowerBlock {
 
 	public void sing(Level level, BlockPos pos, BlockState state, RandomSource random) {
 		level.playLocalSound(pos, melody, SoundSource.BLOCKS, volume, pitch,false);
+	}
 
+	public SoundEvent getMelody() {
+		return melody;
 	}
 }

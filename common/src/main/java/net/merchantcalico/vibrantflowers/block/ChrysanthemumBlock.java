@@ -18,13 +18,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ChrysanthBlock extends AbstractVibrantFlower implements BonemealableBlock {
-	public static final Map<DyeColor, ChrysanthBlock> COLOR_MAP = new HashMap<>();
+public class ChrysanthemumBlock extends AbstractVibrantFlower implements BonemealableBlock {
+	public static final Map<DyeColor, ChrysanthemumBlock> COLOR_MAP = new HashMap<>();
 	private final DyeColor firstColor;
 
-	public ChrysanthBlock(Properties properties, DyeColor... colors) {
+	public ChrysanthemumBlock(Properties properties, float pitch, DyeColor... colors) {
 		super(MobEffects.ABSORPTION, 10, properties,
-				VibrantFlowersSoundEvents.CHRYSANTH_MELODY, 1, colors[0].getId());
+				VibrantFlowersSoundEvents.CHRYSANTHEMUM_BLOCK_MELODY, 1.0F, pitch);
 		this.firstColor = colors[0];
 		for (DyeColor color : colors) {
 			COLOR_MAP.put(color, this);
@@ -50,7 +50,7 @@ public class ChrysanthBlock extends AbstractVibrantFlower implements Bonemealabl
 			BlockPos middlePos = new BlockPos(pos.offset(direction.getUnitVec3i()));
 			BlockPos testingPos = new BlockPos(middlePos.offset(direction.getUnitVec3i()));
 
-			if (level.getBlockState(testingPos).getBlock() instanceof ChrysanthBlock block &&
+			if (level.getBlockState(testingPos).getBlock() instanceof ChrysanthemumBlock block &&
 					level.getBlockState(middlePos).is(BlockTags.REPLACEABLE)) {
 				// TODO: If we have time, custom color logic.
 				newColor = DyeColor.getMixedColor(level, firstColor, block.firstColor);
@@ -59,7 +59,7 @@ public class ChrysanthBlock extends AbstractVibrantFlower implements Bonemealabl
 
 		BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
 		for (int i = 0; i < 4; ++i) {
-			ChrysanthBlock block = newColor != null && random.nextFloat() < 0.25F ? COLOR_MAP.getOrDefault(newColor, this) : this;
+			ChrysanthemumBlock block = newColor != null && random.nextFloat() < 0.25F ? COLOR_MAP.getOrDefault(newColor, this) : this;
 			BlockPos spreadPos = mutablePos.set(pos)
 					.offset(
 							Mth.randomBetweenInclusive(random, -1, 1),

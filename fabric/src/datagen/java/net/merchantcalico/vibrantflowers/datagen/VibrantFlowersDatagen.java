@@ -74,15 +74,15 @@ public class VibrantFlowersDatagen implements DataGeneratorEntrypoint {
 		@Override
 		protected void addTags(HolderLookup.Provider provider) {
 			getOrCreateTagBuilder(VibrantFlowersTags.Blocks.CHRYSANTH_FLOWERS)
-					.add(VibrantFlowersBlocks.RED_CHRYSANTH)
-					.add(VibrantFlowersBlocks.ORANGE_CHRYSANTH)
-					.add(VibrantFlowersBlocks.YELLOW_CHRYSANTH)
-					.add(VibrantFlowersBlocks.GREEN_CHRYSANTH)
-					.add(VibrantFlowersBlocks.BLUE_CHRYSANTH)
-					.add(VibrantFlowersBlocks.PURPLE_CHRYSANTH)
-					.add(VibrantFlowersBlocks.PINK_CHRYSANTH)
-					.add(VibrantFlowersBlocks.WHITE_CHRYSANTH)
-					.add(VibrantFlowersBlocks.BLACK_CHRYSANTH);
+					.add(VibrantFlowersBlocks.RED_CHRYSANTHEMUM)
+					.add(VibrantFlowersBlocks.ORANGE_CHRYSANTHEMUM)
+					.add(VibrantFlowersBlocks.YELLOW_CHRYSANTHEMUM)
+					.add(VibrantFlowersBlocks.GREEN_CHRYSANTHEMUM)
+					.add(VibrantFlowersBlocks.BLUE_CHRYSANTHEMUM)
+					.add(VibrantFlowersBlocks.PURPLE_CHRYSANTHEMUM)
+					.add(VibrantFlowersBlocks.PINK_CHRYSANTHEMUM)
+					.add(VibrantFlowersBlocks.WHITE_CHRYSANTHEMUM)
+					.add(VibrantFlowersBlocks.BLACK_CHRYSANTHEMUM);
 		}
 	}
 

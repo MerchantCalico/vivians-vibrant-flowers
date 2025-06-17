@@ -2,11 +2,18 @@
 	"tab.vibrantflowers": "Vivian's Vibrant Flowers",
 
 	"block.vibrantflowers.halter": "Halter",
-	"block.vibrantflowers.lime_chrysanth": "Lime Chrysanth",
+	"block.vibrantflowers.red_chrysanthemum": "Red Chrysanthemum",
+	"block.vibrantflowers.orange_chrysanthemum": "Orange Chrysanthemum",
+	"block.vibrantflowers.yellow_chrysanthemum": "Yellow Chrysanthemum",
+	"block.vibrantflowers.green_chrysanthemum": "Green Chrysanthemum",
+	"block.vibrantflowers.blue_chrysanthemum": "Blue Chrysanthemum",
+	"block.vibrantflowers.purple_chrysanthemum": "Purple Chrysanthemum",
+	"block.vibrantflowers.pink_chrysanthemum": "Pink Chrysanthemum",
+	"block.vibrantflowers.white_chrysanthemum": "White Chrysanthemum",
+	"block.vibrantflowers.black_chrysanthemum": "Black Chrysanthemum",
 
-	"item.vibrantflowers.lute": "Vivian's Lute",
+	"item.vibrantflowers.vivians_lute": "Vivian's Lute",
 
-	"sounds.vibrantflowers.halter.melody": "Halter Sings",
-	"sounds.vibrantflowers.chrysanth.melody": "Chrysanthemum Sings"
-
+	"subtitles.block.vibrantflowers.halter.melody": "Halter Sings",
+	"subtitles.block.vibrantflowers.chrysanthemum.melody": "Chrysanthemum Sings"
 }
