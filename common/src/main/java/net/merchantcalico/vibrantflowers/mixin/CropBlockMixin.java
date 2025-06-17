@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class CropBlockMixin {
 
 	@Inject(method="randomTick",at=@At("HEAD"),cancellable = true)
-	public void considerNearbyHalters(BlockState state,
+	public void vibrantflowers$considerNearbyHalters(BlockState state,
 									  ServerLevel level,
 									  BlockPos pos,
 									  RandomSource random,
