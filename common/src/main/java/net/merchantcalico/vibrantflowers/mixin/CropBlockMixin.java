@@ -14,24 +14,22 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.List;
-
 @Mixin(CropBlock.class)
 public class CropBlockMixin {
 
-	int range = 8;
 	@Inject(method="randomTick",at=@At("HEAD"),cancellable = true)
-	public void considerNearbyHalters(BlockState state, ServerLevel level,
-			  BlockPos pos, RandomSource random, CallbackInfo ci){
+	public void considerNearbyHalters(BlockState state,
+									  ServerLevel level,
+									  BlockPos pos,
+									  RandomSource random,
+									  CallbackInfo ci) {
 		AABB area = new AABB(
-				pos.getX()-range, pos.getY()-range,pos.getZ()-range,
-				pos.getX()+range, pos.getY()+range, pos.getZ()+range
+				pos.getX() - 8, pos.getY() - 8,pos.getZ() - 8,
+				pos.getX() + 8, pos.getY() + 8, pos.getZ() + 8
 		);
-		List<BlockState> list =level.getBlockStates(area).toList();
-		if(list.contains(VibrantFlowersBlocks.HALTER.defaultBlockState())) {
+		if (level.getBlockStates(area).anyMatch(blockState -> blockState.is(VibrantFlowersBlocks.HALTER))) {
 			ParticleUtils.spawnParticleInBlock(level, pos, 20, ParticleTypes.ASH);
 			ci.cancel();
 		}
-
 	}
 }
