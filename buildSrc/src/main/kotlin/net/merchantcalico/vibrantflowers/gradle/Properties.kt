@@ -6,7 +6,7 @@ object Properties {
 	const val ARCHIVES_NAME = "vivians-vibrant-flowers"
 	const val MOD_ID = "vibrantflowers"
 	const val MOD_AUTHOR = "MerchantCalico"
-	val MOD_CONTRIBUTORS = listOf("Placeholder")
+	val MOD_CONTRIBUTORS = listOf("DoublePi")
 	const val DESCRIPTION = "A mod that focuses on fleshing out flowers where not present."
 	const val LICENSE = "MPL-2.0"
 
