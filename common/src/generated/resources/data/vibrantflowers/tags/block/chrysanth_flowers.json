@@ -1,5 +1,13 @@
 {
   "values": [
-    "vibrantflowers:lime_chrysanth"
+    "vibrantflowers:red_chrysanth",
+    "vibrantflowers:orange_chrysanth",
+    "vibrantflowers:yellow_chrysanth",
+    "vibrantflowers:green_chrysanth",
+    "vibrantflowers:blue_chrysanth",
+    "vibrantflowers:purple_chrysanth",
+    "vibrantflowers:pink_chrysanth",
+    "vibrantflowers:white_chrysanth",
+    "vibrantflowers:black_chrysanth"
   ]
 }

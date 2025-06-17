@@ -20,7 +20,15 @@ public class VibrantFlowersBlocks {
 	public static final HalterBlock HALTER = registerBlock("halter",
 			HalterBlock::new, Properties.ofFullCopy(Blocks.POPPY));
 
-	public static final ChrysanthBlock LIME_CHRYSANTH = registerChrysanth(DyeColor.LIME, DyeColor.GREEN);
+	public static final ChrysanthBlock RED_CHRYSANTH = registerChrysanth(DyeColor.RED);
+	public static final ChrysanthBlock ORANGE_CHRYSANTH = registerChrysanth(DyeColor.ORANGE, DyeColor.BROWN);
+	public static final ChrysanthBlock YELLOW_CHRYSANTH = registerChrysanth(DyeColor.YELLOW);
+	public static final ChrysanthBlock GREEN_CHRYSANTH = registerChrysanth(DyeColor.GREEN, DyeColor.LIME);
+	public static final ChrysanthBlock BLUE_CHRYSANTH = registerChrysanth(DyeColor.BLUE, DyeColor.LIGHT_BLUE, DyeColor.CYAN);
+	public static final ChrysanthBlock PURPLE_CHRYSANTH = registerChrysanth(DyeColor.PURPLE, DyeColor.MAGENTA);
+	public static final ChrysanthBlock PINK_CHRYSANTH = registerChrysanth(DyeColor.PINK);
+	public static final ChrysanthBlock WHITE_CHRYSANTH = registerChrysanth(DyeColor.WHITE, DyeColor.LIGHT_GRAY);
+	public static final ChrysanthBlock BLACK_CHRYSANTH = registerChrysanth(DyeColor.BLACK, DyeColor.GRAY);
 
 	public static<T extends Block> T registerBlock(String name,
 		  Function<Properties, T> factory, Properties properties){

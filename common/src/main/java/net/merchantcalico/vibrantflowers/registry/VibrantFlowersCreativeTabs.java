@@ -22,8 +22,16 @@ public class VibrantFlowersCreativeTabs {
 						.icon(()-> new ItemStack(VibrantFlowersItems.LUTE))
 						.displayItems((itemDisplayParameters, output) ->{
 							output.accept(VibrantFlowersItems.LUTE);
+							output.accept(VibrantFlowersItems.WHITE_CHRYSANTH);
+							output.accept(VibrantFlowersItems.BLACK_CHRYSANTH);
+							output.accept(VibrantFlowersItems.RED_CHRYSANTH);
+							output.accept(VibrantFlowersItems.ORANGE_CHRYSANTH);
+							output.accept(VibrantFlowersItems.YELLOW_CHRYSANTH);
+							output.accept(VibrantFlowersItems.GREEN_CHRYSANTH);
+							output.accept(VibrantFlowersItems.BLUE_CHRYSANTH);
+							output.accept(VibrantFlowersItems.PURPLE_CHRYSANTH);
+							output.accept(VibrantFlowersItems.PINK_CHRYSANTH);
 							output.accept(VibrantFlowersItems.HALTER);
-							output.accept(VibrantFlowersItems.LIME_CHRYSANTH);
 						})
 						.build());
 	}
