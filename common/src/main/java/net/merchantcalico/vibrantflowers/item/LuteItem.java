@@ -19,10 +19,10 @@ public class LuteItem extends Item {
 		BlockPos pos = context.getClickedPos();
 		Level level = context.getLevel();
 		BlockState targetBlock = level.getBlockState(pos);
-		if(targetBlock.getBlock() instanceof AbstractVibrantFlower avf){
+		if (targetBlock.getBlock() instanceof AbstractVibrantFlower avf) {
 			avf.sing(level, pos, targetBlock, level.getRandom());
 			context.getPlayer().awardStat(Stats.ITEM_USED.get(this));
-
+			context.getPlayer().getCooldowns().addCooldown(context.getItemInHand(), 20);
 			return InteractionResult.SUCCESS;
 		}
 
