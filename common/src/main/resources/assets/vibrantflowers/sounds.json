@@ -3,14 +3,14 @@
 	{
 		"subtitle": "subtitles.block.vibrantflowers.halter.melody",
 		"sounds": [
-			"vibrantflowers:melody/halter"
+			"vibrantflowers:block/melody/halter"
 		]
 	},
 	"block.chrysanthemum.melody":
 	{
 		"subtitle": "subtitles.block.vibrantflowers.chrysanthemum.melody",
 		"sounds": [
-			"vibrantflowers:melody/chrysanthemum"
+			"vibrantflowers:block/melody/chrysanthemum"
 		]
 	}
 }
