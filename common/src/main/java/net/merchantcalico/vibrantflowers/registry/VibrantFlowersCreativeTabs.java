@@ -1,4 +1,4 @@
-package net.merchantcalico.vibrantflowers.common.registries;
+package net.merchantcalico.vibrantflowers.registry;
 
 import net.merchantcalico.vibrantflowers.VibrantFlowers;
 import net.minecraft.core.Registry;
@@ -8,11 +8,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 
-public class ModCreativeTabs {
+public class VibrantFlowersCreativeTabs {
 
 	private static final ResourceKey<CreativeModeTab> VIBRANT_FLOWERS = ResourceKey.create(Registries.CREATIVE_MODE_TAB,
 			ResourceLocation.fromNamespaceAndPath(VibrantFlowers.MOD_ID, "vibrant_flowers"));
@@ -21,13 +19,11 @@ public class ModCreativeTabs {
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, VIBRANT_FLOWERS,
 				CreativeModeTab.builder(CreativeModeTab.Row.TOP,0)
 						.title(Component.translatable("tab.vibrantflowers"))
-						.icon(()-> new ItemStack(ModItems.LUTE))
+						.icon(()-> new ItemStack(VibrantFlowersItems.LUTE))
 						.displayItems((itemDisplayParameters, output) ->{
-							output.accept(ModItems.LUTE);
-							output.accept(ModBlocks.HALTER_ITEM);
-							for (int i = 0; i < 16; i++) {
-								output.accept(ModBlocks.CHRYSANTHS[i]);
-							}
+							output.accept(VibrantFlowersItems.LUTE);
+							output.accept(VibrantFlowersItems.HALTER);
+							output.accept(VibrantFlowersItems.LIME_CHRYSANTH);
 						})
 						.build());
 	}

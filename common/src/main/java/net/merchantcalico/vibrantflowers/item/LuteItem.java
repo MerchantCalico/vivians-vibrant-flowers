@@ -1,10 +1,7 @@
-package net.merchantcalico.vibrantflowers.common.instruments;
+package net.merchantcalico.vibrantflowers.item;
 
-import net.merchantcalico.vibrantflowers.common.flowers.AbstractVibrantFlower;
-import net.merchantcalico.vibrantflowers.common.registries.ModSoundEvents;
+import net.merchantcalico.vibrantflowers.block.AbstractVibrantFlower;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;

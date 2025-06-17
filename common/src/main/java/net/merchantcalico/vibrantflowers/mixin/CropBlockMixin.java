@@ -1,7 +1,6 @@
 package net.merchantcalico.vibrantflowers.mixin;
 
-import net.merchantcalico.vibrantflowers.VibrantFlowers;
-import net.merchantcalico.vibrantflowers.common.registries.ModBlocks;
+import net.merchantcalico.vibrantflowers.registry.VibrantFlowersBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -29,7 +28,7 @@ public class CropBlockMixin {
 				pos.getX()+range, pos.getY()+range, pos.getZ()+range
 		);
 		List<BlockState> list =level.getBlockStates(area).toList();
-		if(list.contains(ModBlocks.HALTER.defaultBlockState())) {
+		if(list.contains(VibrantFlowersBlocks.HALTER.defaultBlockState())) {
 			ParticleUtils.spawnParticleInBlock(level, pos, 20, ParticleTypes.ASH);
 			ci.cancel();
 		}

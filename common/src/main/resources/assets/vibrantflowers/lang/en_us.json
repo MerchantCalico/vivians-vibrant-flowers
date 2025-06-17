@@ -1,9 +1,10 @@
 {
-	"tab.vibrantflowers": "Vivian's Flowers",
-	"item.vibrantflowers.lute": "Vibrant's Lute",
+	"tab.vibrantflowers": "Vivian's Vibrant Flowers",
 
-	"item.vibrantflowers.halter": "Halter",
-	"item.vibrantflowers.chrysanth": "Chrysanthemum",
+	"block.vibrantflowers.halter": "Halter",
+	"block.vibrantflowers.lime_chrysanth": "Lime Chrysanth",
+
+	"item.vibrantflowers.lute": "Vivian's Lute",
 
 	"sounds.vibrantflowers.halter.melody": "Halter Sings",
 	"sounds.vibrantflowers.chrysanth.melody": "Chrysanthemum Sings"

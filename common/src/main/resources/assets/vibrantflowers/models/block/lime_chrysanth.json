@@ -1,0 +1,7 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "vibrantflowers:block/lime_chrysanth"
+	},
+	"render_type": "cutout"
+}

@@ -1,9 +1,9 @@
 package net.merchantcalico.vibrantflowers;
 
-import net.merchantcalico.vibrantflowers.common.registries.ModBlocks;
-import net.merchantcalico.vibrantflowers.common.registries.ModCreativeTabs;
-import net.merchantcalico.vibrantflowers.common.registries.ModItems;
-import net.merchantcalico.vibrantflowers.common.registries.ModSoundEvents;
+import net.merchantcalico.vibrantflowers.registry.VibrantFlowersBlocks;
+import net.merchantcalico.vibrantflowers.registry.VibrantFlowersCreativeTabs;
+import net.merchantcalico.vibrantflowers.registry.VibrantFlowersItems;
+import net.merchantcalico.vibrantflowers.registry.VibrantFlowersSoundEvents;
 import net.merchantcalico.vibrantflowers.platform.VibrantFlowersPlatformHelper;
 import net.merchantcalico.vibrantflowers.platform.side.VibrantFlowersSideHelper;
 import org.slf4j.Logger;
@@ -23,10 +23,10 @@ public class VibrantFlowers {
 	private static VibrantFlowersSideHelper<?> sideHelper;
 
 	public static void init() {
-		ModItems.init();
-		ModBlocks.init();
-		ModSoundEvents.init();
-		ModCreativeTabs.init();
+		VibrantFlowersBlocks.init();
+		VibrantFlowersItems.init();
+		VibrantFlowersSoundEvents.init();
+		VibrantFlowersCreativeTabs.init();
 	}
 
 	public static Logger getLogger(String... subsystems) {

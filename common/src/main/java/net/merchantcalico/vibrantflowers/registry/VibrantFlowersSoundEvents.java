@@ -1,4 +1,4 @@
-package net.merchantcalico.vibrantflowers.common.registries;
+package net.merchantcalico.vibrantflowers.registry;
 
 import net.merchantcalico.vibrantflowers.VibrantFlowers;
 import net.minecraft.core.Registry;
@@ -6,7 +6,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
-public class ModSoundEvents {
+public class VibrantFlowersSoundEvents {
 
 	public static final SoundEvent HALTER_MELODY = register("halter_melody");
 	public static final SoundEvent CHRYSANTH_MELODY = register("chrysanth_melody");

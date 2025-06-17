@@ -15,6 +15,22 @@ repositories {
 	}
 }
 
+sourceSets {
+	getByName("main") {
+		compileClasspath += project(":common").sourceSets["main"].output
+		runtimeClasspath += project(":common").sourceSets["main"].output
+	}
+	getByName("test") {
+		runtimeClasspath += sourceSets["main"].runtimeClasspath
+	}
+	create("datagen") {
+		compileClasspath += sourceSets["main"].compileClasspath
+		runtimeClasspath += sourceSets["main"].runtimeClasspath
+		compileClasspath += sourceSets["main"].output
+		runtimeClasspath += sourceSets["main"].output
+	}
+}
+
 loom {
 	val aw = file("src/main/resources/${Properties.MOD_ID}.accesswidener")
 	if (aw.exists())
@@ -34,7 +50,7 @@ loom {
 			configName = "Fabric Client"
 			setSource(sourceSets["test"])
 			ideConfigGenerated(true)
-			vmArgs("-Dmixin.debug.verbose=true", "-Dmixin.debug.export=true")
+			vmArgs("-Dmixin.debug.verbose=true", "-Dmixin.debug.export=true", "-Dfabric-api.gametest")
 		}
 		named("server") {
 			server()
@@ -46,23 +62,13 @@ loom {
 		register("datagen") {
 			server()
 			configName = "Fabric Datagen"
-			setSource(sourceSets["test"])
+			setSource(sourceSets["datagen"])
 			ideConfigGenerated(true)
 			vmArg("-Dfabric-api.datagen")
 			vmArg("-Dfabric-api.datagen.output-dir=${file("../common/src/generated/resources")}")
-			vmArg("-Dfabric-api.datagen.modid=${Properties.MOD_ID}")
+			vmArg("-Dfabric-api.datagen.modid=${Properties.MOD_ID}_datagen")
 			runDir("build/datagen")
 		}
-	}
-}
-
-sourceSets {
-	getByName("main") {
-		compileClasspath += project(":common").sourceSets["main"].output
-		runtimeClasspath += project(":common").sourceSets["main"].output
-	}
-	getByName("test") {
-		runtimeClasspath += sourceSets["main"].runtimeClasspath
 	}
 }
 
@@ -75,7 +81,7 @@ dependencies {
 
 	modImplementation("net.fabricmc:fabric-loader:${Versions.FABRIC_LOADER}")
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${Versions.FABRIC_API}")
-	modLocalRuntime("net.fabricmc.fabric-api:fabric-api:${Versions.FABRIC_API}")
+
 	modLocalRuntime("com.terraformersmc:modmenu:${Versions.MOD_MENU}")
 }
 
@@ -102,6 +108,8 @@ publishMods {
 
 		clientRequired = true
 		serverRequired = true
+
+		requires("fabric-api")
 	}
 
 	modrinth {
@@ -109,5 +117,7 @@ publishMods {
 		accessToken = providers.environmentVariable("MODRINTH_TOKEN")
 
 		minecraftVersions.add(Versions.MINECRAFT)
+
+		requires("fabric-api")
 	}
 }
