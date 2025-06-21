@@ -13,11 +13,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConf
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
 public class VibrantFlowersConfiguredFeatures {
-	public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_CHRYSANTH = ResourceKey.create(Registries.CONFIGURED_FEATURE,
-			ResourceLocation.fromNamespaceAndPath(VibrantFlowers.MOD_ID, "white_chrysanth"));
+	public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_CHRYSANTHEMUM = ResourceKey.create(Registries.CONFIGURED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(VibrantFlowers.MOD_ID, "white_chrysanthemum"));
 
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-		context.register(WHITE_CHRYSANTH, new ConfiguredFeature<>(Feature.FLOWER,
+		context.register(WHITE_CHRYSANTHEMUM, new ConfiguredFeature<>(Feature.FLOWER,
 				new RandomPatchConfiguration(8, 4, 1, PlacementUtils.onlyWhenEmpty(
 						Feature.SIMPLE_BLOCK,
 						new SimpleBlockConfiguration(BlockStateProvider.simple(VibrantFlowersBlocks.WHITE_CHRYSANTHEMUM))
