@@ -16,6 +16,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -73,16 +75,49 @@ public class VibrantFlowersDatagen implements DataGeneratorEntrypoint {
 
 		@Override
 		protected void addTags(HolderLookup.Provider provider) {
-			getOrCreateTagBuilder(VibrantFlowersTags.Blocks.CHRYSANTH_FLOWERS)
-					.add(VibrantFlowersBlocks.RED_CHRYSANTHEMUM)
-					.add(VibrantFlowersBlocks.ORANGE_CHRYSANTHEMUM)
-					.add(VibrantFlowersBlocks.YELLOW_CHRYSANTHEMUM)
-					.add(VibrantFlowersBlocks.GREEN_CHRYSANTHEMUM)
-					.add(VibrantFlowersBlocks.BLUE_CHRYSANTHEMUM)
-					.add(VibrantFlowersBlocks.PURPLE_CHRYSANTHEMUM)
-					.add(VibrantFlowersBlocks.PINK_CHRYSANTHEMUM)
-					.add(VibrantFlowersBlocks.WHITE_CHRYSANTHEMUM)
-					.add(VibrantFlowersBlocks.BLACK_CHRYSANTHEMUM);
+			getOrCreateTagBuilder(VibrantFlowersTags.Blocks.CHRYSANTHEMUMS)
+					.add(
+							VibrantFlowersBlocks.RED_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.ORANGE_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.YELLOW_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.GREEN_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.BLUE_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.PURPLE_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.PINK_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.WHITE_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.BLACK_CHRYSANTHEMUM
+					);
+			getOrCreateTagBuilder(VibrantFlowersTags.Blocks.COMMON_CHRYSANTHEMUMS)
+					.add(
+							VibrantFlowersBlocks.RED_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.ORANGE_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.YELLOW_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.PURPLE_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.PINK_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.WHITE_CHRYSANTHEMUM
+					);
+			getOrCreateTagBuilder(VibrantFlowersTags.Blocks.RARE_CHRYSANTHEMUMS)
+					.add(
+							VibrantFlowersBlocks.GREEN_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.BLUE_CHRYSANTHEMUM,
+							VibrantFlowersBlocks.BLACK_CHRYSANTHEMUM
+					);
+
+			getOrCreateTagBuilder(VibrantFlowersTags.Blocks.BLUE_CHRYSANTHEMUM_FLOWER_CATALYST)
+					.add(
+							Blocks.CORNFLOWER,
+							Blocks.BLUE_ORCHID
+					);
+			getOrCreateTagBuilder(VibrantFlowersTags.Blocks.GREEN_CHRYSANTHEMUM_FLOWER_CATALYST)
+					.add(
+							Blocks.LILY_OF_THE_VALLEY,
+							Blocks.WHITE_TULIP
+					);
+			getOrCreateTagBuilder(VibrantFlowersTags.Blocks.BLACK_CHRYSANTHEMUM_FLOWER_CATALYST)
+					.add(
+							Blocks.WITHER_ROSE,
+							VibrantFlowersBlocks.HALTER
+					);
 		}
 	}
 
@@ -93,7 +128,9 @@ public class VibrantFlowersDatagen implements DataGeneratorEntrypoint {
 
 		@Override
 		protected void addTags(HolderLookup.Provider provider) {
-			copy(VibrantFlowersTags.Blocks.CHRYSANTH_FLOWERS, VibrantFlowersTags.Items.CHRYSANTH_FLOWERS);
+			copy(VibrantFlowersTags.Blocks.CHRYSANTHEMUMS, VibrantFlowersTags.Items.CHRYSANTHEMUMS);
+			copy(VibrantFlowersTags.Blocks.COMMON_CHRYSANTHEMUMS, VibrantFlowersTags.Items.COMMON_CHRYSANTHEMUMS);
+			copy(VibrantFlowersTags.Blocks.RARE_CHRYSANTHEMUMS, VibrantFlowersTags.Items.RARE_CHRYSANTHEMUMS);
 		}
 	}
 }
