@@ -1,13 +1,18 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "net.merchantcalico.vibrantflowers.mixin",
-  "refmap": "${mod_id}.refmap.json",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": ["CropBlockMixin"],
+	"required": true,
+	"minVersion": "0.8",
+	"package": "net.merchantcalico.vibrantflowers.mixin",
+	"refmap": "${mod_id}.refmap.json",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"CropBlockMixin",
+		"GrowingPlantHeadBlockMixin",
+		"SaplingMixin",
+		"VineMixin"
+	],
 	"client": [],
-  "server": [],
-  "injectors": {
-    "defaultRequire": 1
-  }
+	"server": [],
+	"injectors": {
+		"defaultRequire": 1
+	}
 }
